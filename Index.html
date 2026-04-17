@@ -1,1 +1,195 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Recuperación - Blog</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b0b;
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 30px;
+    background: black;
+    color: #c77dff;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #111;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #c77dff;
+}
+
+/* SECCIONES */
+section {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(199,125,255,0.2);
+}
+
+/* GALERIA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+.gallery-item {
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.gallery-item p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* BLOG */
+.post {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #888;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Mi Proceso de Recuperación
+</header>
+
+<nav>
+<a href="#historia">Historia</a>
+<a href="#proceso">Proceso</a>
+<a href="#imagenes">Radiografías</a>
+<a href="#blog">Blog</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<section id="historia">
+<div class="card">
+<h2>Mi Historia</h2>
+<p>
+Sufrí una fractura compleja de tibia y peroné con compromiso del tobillo.  
+Este sitio documenta mi proceso real: desde el accidente, el paso por el hospital, las cirugías, hasta la recuperación.
+</p>
+</div>
+</section>
+
+<section id="proceso">
+<div class="card">
+<h2>Proceso Médico</h2>
+<ul>
+<li>Accidente inicial</li>
+<li>Hospitalización</li>
+<li>Fijador externo</li>
+<li>Cirugía con placas y tornillos</li>
+<li>Recuperación con férula</li>
+</ul>
+</div>
+</section>
+
+<section id="imagenes">
+<div class="card">
+<h2>Radiografías y Estudios</h2>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="imagenes/rx1.jpg" alt="Radiografía 1">
+<p>Post cirugía: fijación con placas y tornillos</p>
+</div>
+
+<div class="gallery-item">
+<img src="imagenes/rx2.jpg" alt="Radiografía 2">
+<p>Vista lateral del tobillo reconstruido</p>
+</div>
+
+<div class="gallery-item">
+<img src="imagenes/rx3.jpg" alt="Radiografía 3">
+<p>Control después del TAC</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="blog">
+<div class="card">
+<h2>Blog</h2>
+
+<div class="post">
+<h3>El día que todo cambió</h3>
+<p>
+Todo comenzó con un accidente que terminó en una fractura grave.
+Desde ese momento empezó un proceso físico y mental muy fuerte.
+</p>
+</div>
+
+<div class="post">
+<h3>Una cirugía de 5 horas</h3>
+<p>
+La intervención fue compleja debido al estado del hueso.
+Se colocaron placas y tornillos para reconstruir la estructura.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="contacto">
+<div class="card">
+<h2>Contacto</h2>
+<p>Puedes seguir mi proceso o compartir experiencias similares.</p>
+</div>
+</section>
+
+<footer>
+© 2026 Mi recuperación | Historia real
+</footer>
+
+</body>
+</html>

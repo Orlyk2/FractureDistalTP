@@ -3,192 +3,220 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Recuperación - Blog</title>
+<title>Fractura distal de peroné y tibia</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0b0b;
-    color: #fff;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAV VERTICAL */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff2e63;
+    transform: translateX(5px);
+}
+
+/* BOTÓN CRUZ ROJA */
+.contacto {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    z-index: 1000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: miedo 1.2s infinite;
+    box-shadow: 0 0 20px red;
+    cursor: pointer;
+}
+
+/* Cruz */
+.contacto::before,
+.contacto::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+.contacto::before {
+    width: 15px;
+    height: 40px;
+}
+
+.contacto::after {
+    width: 40px;
+    height: 15px;
+}
+
+/* Animación miedo */
+@keyframes miedo {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px red;
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 30px red, 0 0 50px darkred;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px red;
+    }
 }
 
 /* HEADER */
 header {
+    height: 100vh;
+    position: relative;
     text-align: center;
-    padding: 30px;
-    background: black;
-    color: #c77dff;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-/* NAV */
-nav {
     display: flex;
     justify-content: center;
-    background: #111;
-    padding: 10px;
+    align-items: center;
+    flex-direction: column;
 }
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+
+/* TÍTULO RESPONSIVE */
+.titulo {
+    font-size: clamp(22px, 5vw, 48px);
+    color: #fff;
+    text-shadow: 0 0 20px red;
+    z-index: 2;
+    text-align: center;
+    padding: 0 15px;
+    line-height: 1.2;
 }
-nav a:hover {
-    color: #c77dff;
+
+/* IMÁGENES */
+.floating-img {
+    position: absolute;
+    width: 180px;
+    opacity: 0.6;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    border-radius: 10px;
+}
+
+.img1 { top: 10%; left: 5%; }
+.img2 { top: 20%; right: 10%; }
+.img3 { bottom: 15%; left: 15%; }
+.img4 { bottom: 10%; right: 5%; }
+.img5 { top: 50%; left: 45%; }
+
+.floating-img:hover {
+    transform: scale(1.8);
+    opacity: 1;
+    z-index: 5;
 }
 
 /* SECCIONES */
 section {
-    padding: 40px;
+    padding: 60px 20px;
     max-width: 1000px;
     margin: auto;
 }
 
 .card {
-    background: #1a1a1a;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 15px rgba(199,125,255,0.2);
-}
-
-/* GALERIA */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-.gallery-item {
     background: #111;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
-}
-.gallery-item img {
-    width: 100%;
-    border-radius: 10px;
-}
-.gallery-item p {
-    font-size: 14px;
-    color: #aaa;
-}
-
-/* BLOG */
-.post {
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #333;
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
     padding: 20px;
-    background: #111;
-    color: #888;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        left: 5px;
+        padding: 10px;
+    }
+
+    .floating-img {
+        width: 120px;
+    }
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
-Mi Proceso de Recuperación
-</header>
-
 <nav>
 <a href="#historia">Historia</a>
 <a href="#proceso">Proceso</a>
-<a href="#imagenes">Radiografías</a>
-<a href="#blog">Blog</a>
-<a href="#contacto">Contacto</a>
+<a href="#rayosx">Rayos X</a>
 </nav>
+
+<header>
+
+<h1 class="titulo">Fractura distal de peroné y tibia</h1>
+
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ed930883aa34f69ce473dc4f6414798b729c224a/IMG_20260418_114041.jpg" class="floating-img img1">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1c8fc085cd1ac0dd1782f67c7609cdce2fef2828/IMG20260411090254.jpg" class="floating-img img2">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1dd49497534039c423a26a4c39029535b10ffd85/IMG20260406222339.jpg" class="floating-img img3">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c773778d228a95145a06a221dacf726147046bf2/IMG20260406133355.jpg" class="floating-img img4">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg" class="floating-img img5">
+
+</header>
 
 <section id="historia">
 <div class="card">
-<h2>Mi Historia</h2>
+<h2>Historia</h2>
 <p>
-Sufrí una fractura compleja de tibia y peroné con compromiso del tobillo.  
-Este sitio documenta mi proceso real: desde el accidente, el paso por el hospital, las cirugías, hasta la recuperación.
+Una fractura compleja cambió todo.  
+Este sitio muestra el proceso real: dolor, cirugía y recuperación.
 </p>
 </div>
 </section>
 
 <section id="proceso">
 <div class="card">
-<h2>Proceso Médico</h2>
-<ul>
-<li>Accidente inicial</li>
-<li>Hospitalización</li>
-<li>Fijador externo</li>
-<li>Cirugía con placas y tornillos</li>
-<li>Recuperación con férula</li>
-</ul>
-</div>
-</section>
-
-<section id="imagenes">
-<div class="card">
-<h2>Radiografías y Estudios</h2>
-
-<div class="gallery">
-
-<div class="gallery-item">
-<img src="imagenes/rx1.jpg" alt="Radiografía 1">
-<p>Post cirugía: fijación con placas y tornillos</p>
-</div>
-
-<div class="gallery-item">
-<img src="imagenes/rx2.jpg" alt="Radiografía 2">
-<p>Vista lateral del tobillo reconstruido</p>
-</div>
-
-<div class="gallery-item">
-<img src="imagenes/rx3.jpg" alt="Radiografía 3">
-<p>Control después del TAC</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<section id="blog">
-<div class="card">
-<h2>Blog</h2>
-
-<div class="post">
-<h3>El día que todo cambió</h3>
+<h2>Proceso</h2>
 <p>
-Todo comenzó con un accidente que terminó en una fractura grave.
-Desde ese momento empezó un proceso físico y mental muy fuerte.
+Desde el accidente hasta la reconstrucción con placas y tornillos.
+Cada imagen representa una etapa.
 </p>
 </div>
+</section>
 
-<div class="post">
-<h3>Una cirugía de 5 horas</h3>
+<section id="rayosx">
+<div class="card">
+<h2>Rayos X</h2>
 <p>
-La intervención fue compleja debido al estado del hueso.
-Se colocaron placas y tornillos para reconstruir la estructura.
+Aquí se documentan las imágenes médicas que muestran la evolución de la fractura.
 </p>
 </div>
-
-</div>
 </section>
 
-<section id="contacto">
-<div class="card">
-<h2>Contacto</h2>
-<p>Puedes seguir mi proceso o compartir experiencias similares.</p>
-</div>
-</section>
-
-<footer>
-© 2026 Mi recuperación | Historia real
-</footer>
+<!-- BOTÓN CONTACTO -->
+<a href="https://wa.me/5731362993675" target="_blank" class="contacto"></a>
 
 </body>
 </html>

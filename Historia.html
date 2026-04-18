@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historia - Fractura distal</title>
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff2e63;
+}
+
+/* BOTÓN CRUZ */
+.contacto {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 10px;
+    animation: miedo 1.2s infinite;
+    z-index: 1000;
+}
+
+/* Cruz */
+.contacto::before,
+.contacto::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+.contacto::before {
+    width: 15px;
+    height: 40px;
+    top: 10px;
+    left: 22px;
+}
+
+.contacto::after {
+    width: 40px;
+    height: 15px;
+    top: 22px;
+    left: 10px;
+}
+
+/* Animación */
+@keyframes miedo {
+    0% { transform: scale(1); box-shadow: 0 0 10px red; }
+    50% { transform: scale(1.2); box-shadow: 0 0 30px red; }
+    100% { transform: scale(1); box-shadow: 0 0 10px red; }
+}
+
+/* CONTENIDO */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(24px, 5vw, 42px);
+    text-shadow: 0 0 15px red;
+}
+
+.card {
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #ff2e63;
+}
+
+/* LISTAS */
+ul {
+    padding-left: 20px;
+}
+
+/* GALERÍA */
+.galeria {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria img {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        left: 5px;
+        padding: 10px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Inicio</a>
+</nav>
+
+<div class="container">
+
+<h1>Mi proceso: desde el hospital hasta la cirugía final</h1>
+
+<div class="card">
+
+<p>
+Todo comenzó el día que llegué al hospital después del accidente. Desde el primer momento supe que no era algo simple. El dolor era intenso, constante, y lo más evidente era que no podía apoyar la pierna.
+</p>
+
+<p>
+Pero no solo era la pierna. También tenía <strong>6 heridas cortopunzantes</strong> en el brazo y la espalda, con un sangrado considerable. Fue una situación crítica.
+</p>
+
+<p>
+A pesar de la gravedad, <strong>ninguna de las heridas comprometió órganos vitales</strong>. El equipo médico actuó rápido, controló el sangrado y cerró las heridas a tiempo, evitando complicaciones mayores.
+</p>
+
+<h2>🏥 Los primeros días</h2>
+<p>
+Los exámenes confirmaron una fractura distal de tibia y peroné con compromiso del tobillo. No podían operarme de inmediato por la inflamación.
+</p>
+
+<ul>
+<li>Dolor constante</li>
+<li>Dificultad para dormir</li>
+<li>Dependencia total</li>
+<li>Frustración</li>
+</ul>
+
+<h2>🔩 El fijador externo</h2>
+<p>
+Me colocaron un tutor externo para estabilizar la pierna. Fue incómodo: molestias, sangrados leves y presión intensa al bajar la pierna.
+</p>
+
+<h2>⏳ Hospitalización</h2>
+<ul>
+<li>Dormía mal</li>
+<li>Dependía de otros</li>
+<li>Inflamación persistente</li>
+</ul>
+
+<h2>🛠️ Cirugía definitiva</h2>
+<p>
+Duró aproximadamente 5 horas. Fue compleja:
+</p>
+
+<ul>
+<li>Hueso fragmentado</li>
+<li>Reconstrucción parcial</li>
+<li>Uso de placas y tornillos</li>
+</ul>
+
+<h2>💉 Postoperatorio</h2>
+<p>
+Dolor controlado. Podía mover los dedos, lo que indicaba que no hubo daño neurológico.
+</p>
+
+<h2>🩻 Resultados</h2>
+<ul>
+<li>Placas bien posicionadas</li>
+<li>Estructura estabilizada</li>
+<li>Recuperación funcional</li>
+</ul>
+
+<h2>🔄 Estado actual</h2>
+<ul>
+<li>Con férula</li>
+<li>Sin apoyar</li>
+<li>Dolor controlado</li>
+</ul>
+
+<h2>🧠 Reflexión</h2>
+<p>
+No fue solo una fractura. Fue un proceso físico y mental donde la paciencia y la resistencia fueron clave.
+</p>
+
+</div>
+
+<div class="galeria">
+
+<h2>Resultado final</h2>
+
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+
+</div>
+
+</div>
+
+<!-- BOTÓN -->
+<a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
+
+</body>
+</html>

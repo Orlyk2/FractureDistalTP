@@ -1,1 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proceso - Recuperación</title>
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+}
+
+/* NAV SOLO VOLVER */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    background: rgba(255,0,0,0.2);
+    border-radius: 8px;
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: red;
+    transform: scale(1.05);
+}
+
+/* BOTÓN CRUZ */
+.contacto {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 10px;
+    animation: miedo 1.2s infinite;
+    z-index: 1000;
+}
+
+.contacto::before,
+.contacto::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+.contacto::before {
+    width: 15px;
+    height: 40px;
+    top: 10px;
+    left: 22px;
+}
+
+.contacto::after {
+    width: 40px;
+    height: 15px;
+    top: 22px;
+    left: 10px;
+}
+
+@keyframes miedo {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.2);}
+    100% { transform: scale(1);}
+}
+
+/* CONTENIDO */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 0 0 20px red;
+}
+
+h2 {
+    color: #ff2e63;
+    margin-top: 40px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* GALERÍA */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        left: 5px;
+        padding: 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">⬅ Volver</a>
+</nav>
+
+<div class="container">
+
+<h1>Proceso real de recuperación</h1>
+
+<h2>💥 El inicio: trauma y urgencia</h2>
+<p>
+Todo comenzó con un impacto fuerte y un dolor inmediato. La pierna no respondía y el cuerpo reflejaba la gravedad del momento.
+La escena era crítica, y desde ese instante comenzó un proceso médico complejo.
+</p>
+
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2482ebfcebbe88905736a7de280f6c9099657bb4/IMG20260405123729.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1bd6b1d4a6fe31d9577aa1b7798f46752874298/IMG20260405123330.jpg">
+</div>
+
+<h2>🩸 Días críticos: dolor y sangrado</h2>
+<p>
+Los primeros días fueron los más difíciles. La inflamación, el dolor constante y el sangrado evidenciaban la gravedad de la lesión.
+Cada movimiento era limitado y dependía completamente de ayuda externa.
+</p>
+
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1c8fc085cd1ac0dd1782f67c7609cdce2fef2828/IMG20260411090254.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1dd49497534039c423a26a4c39029535b10ffd85/IMG20260406222339.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c773778d228a95145a06a221dacf726147046bf2/IMG20260406133355.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg">
+</div>
+
+<h2>🔩 Estabilización con tutor externo</h2>
+<p>
+Para evitar un mayor daño, se implementó un fijador externo.
+Aunque incómodo, fue clave para mantener la alineación del hueso mientras bajaba la inflamación.
+</p>
+
+<h2>🩻 Evaluación médica</h2>
+<p>
+Los estudios confirmaron una fractura compleja de tibia y peroné.
+Las imágenes mostraban desplazamiento y compromiso del tobillo.
+</p>
+
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121221.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121238.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121354.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/0d7d72955c981067575fb33abc0aee75d5115105/IMG_20260418_121734.jpg">
+</div>
+
+<h2>🛠️ Cirugía y reconstrucción</h2>
+<p>
+La cirugía fue un punto clave. Se colocaron placas y tornillos para estabilizar el tobillo.
+El procedimiento fue complejo debido al estado del hueso.
+</p>
+
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130745.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130912.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130704.jpg">
+</div>
+
+<h2>🦶 Resultado final</h2>
+<p>
+Las imágenes finales muestran una estructura estabilizada.
+Aunque no es idéntica a la original, representa un gran avance en la recuperación.
+</p>
+
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+</div>
+
+</div>
+
+<a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
+
+</body>
+  </html>

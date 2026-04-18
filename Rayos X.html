@@ -1,1 +1,170 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rayos X - Evolución</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #0a0a0a, #000);
+    color: white;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff2e63;
+}
+
+/* BOTÓN CRUZ */
+.contacto {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 10px;
+    animation: miedo 1.2s infinite;
+}
+
+.contacto::before,
+.contacto::after {
+    content: '';
+    position: absolute;
+    background: white;
+}
+
+.contacto::before {
+    width: 15px;
+    height: 40px;
+    top: 10px;
+    left: 22px;
+}
+
+.contacto::after {
+    width: 40px;
+    height: 15px;
+    top: 22px;
+    left: 10px;
+}
+
+@keyframes miedo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* CONTENIDO */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(24px,5vw,42px);
+    text-shadow: 0 0 15px red;
+}
+
+h2 {
+    color: #ff2e63;
+    margin-top: 40px;
+}
+
+/* GALERÍA */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.grid img {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.grid img:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Inicio</a>
+</nav>
+
+<div class="container">
+
+<h1>Rayos X y evolución médica</h1>
+
+<!-- DIAGNÓSTICO -->
+<h2>📋 Diagnóstico inicial</h2>
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121221.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121238.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121354.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/0d7d72955c981067575fb33abc0aee75d5115105/IMG_20260418_121734.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/71ffc29d72011dced9640192fa3440c010a45f2a/IMG_20260418_131025.jpg">
+</div>
+
+<!-- TUTOR EXTERNO -->
+<h2>🔩 Fijador externo (Tutor)</h2>
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130526.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/cfb6868caf321b05d0ae53604e1fbc159dbc20bb/IMG_20260418_132621.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/71ffc29d72011dced9640192fa3440c010a45f2a/IMG_20260418_130840.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/71ffc29d72011dced9640192fa3440c010a45f2a/IMG_20260418_130824.jpg">
+</div>
+
+<!-- RESULTADO POST CIRUGÍA -->
+<h2>🛠️ Resultado post cirugía</h2>
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130745.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130912.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130704.jpg">
+</div>
+
+<!-- RESULTADO FINAL -->
+<h2>🦶 Resultado final del tobillo</h2>
+<div class="grid">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+</div>
+
+</div>
+
+<a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
+
+</body>
+  </html>

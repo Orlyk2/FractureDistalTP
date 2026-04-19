@@ -15,33 +15,39 @@ body {
     transition: 0.2s;
 }
 
-/* NAV FLOTANTE */
+/* NAV CABECERA */
 nav {
     position: fixed;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.9);
-    padding: 15px;
-    border-radius: 15px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0,0,0,0.85);
+    padding: 15px 0;
     z-index: 1000;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,0,0,0.3);
 }
 
 nav a {
-    color: #bbb;
-    display: block;
-    margin: 10px 0;
+    color: #ccc;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: red;
+    color: white;
     text-shadow: 0 0 10px red;
 }
 
 /* HEADER */
 header {
     height: 100vh;
+    margin-top: 70px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -50,12 +56,15 @@ header {
 
 /* TITULO */
 .titulo {
-    font-size: clamp(24px, 5vw, 50px);
-    text-shadow: 0 0 15px red;
+    font-size: clamp(32px, 6vw, 70px);
+    text-align: center;
+    color: rgba(255,255,255,0.85);
+    text-shadow: 0 0 20px red;
     z-index: 2;
+    max-width: 90%;
 }
 
-/* IMÁGENES FLOTANTES */
+/* IMÁGENES */
 .floating-img {
     position: absolute;
     width: 150px;
@@ -101,7 +110,7 @@ section {
     border-left: 3px solid red;
 }
 
-/* BOTÓN */
+/* BOTON */
 .contacto {
     position: fixed;
     bottom: 25px;
@@ -181,14 +190,11 @@ section {
 
 <h1 class="titulo">Fractura distal de peroné y tibia</h1>
 
-<!-- IMÁGENES -->
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ed930883aa34f69ce473dc4f6414798b729c224a/IMG_20260418_114041.jpg" class="floating-img img1">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1c8fc085cd1ac0dd1782f67c7609cdce2fef2828/IMG20260411090254.jpg" class="floating-img img2">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1dd49497534039c423a26a4c39029535b10ffd85/IMG20260406222339.jpg" class="floating-img img3">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c773778d228a95145a06a221dacf726147046bf2/IMG20260406133355.jpg" class="floating-img img4">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg" class="floating-img img5">
-
-<!-- NUEVAS -->
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260406222339.jpg" class="floating-img img6">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260405123729.jpg" class="floating-img img7">
 
@@ -197,21 +203,45 @@ section {
 <section id="historia">
 <div class="card">
 <h2>Historia</h2>
-<p>Todo cambió en un instante…</p>
+<p>
+Todo ocurrió en cuestión de segundos. Un movimiento mal calculado, un apoyo que no respondió como debía… y luego ese sonido seco que no se olvida.  
+Al principio no fue el dolor lo que más impactó, sino la sensación de que algo no estaba en su lugar.  
+
+Los minutos posteriores fueron confusos. Intentar moverse era imposible. El cuerpo no respondía como antes, y cada intento solo confirmaba que la situación era grave.  
+
+El traslado, la espera, las primeras revisiones… todo parecía avanzar demasiado lento mientras la mente intentaba procesar lo que había pasado.  
+Ahí comenzó realmente todo: no solo una fractura, sino un proceso largo, físico y mental.
+</p>
 </div>
 </section>
 
 <section id="proceso">
 <div class="card">
 <h2>Proceso</h2>
-<p>Días largos… noches interminables…</p>
+<p>
+El proceso médico no fue inmediato ni sencillo. Las primeras horas estuvieron llenas de evaluaciones, radiografías y decisiones que definirían el tratamiento.  
+
+La cirugía fue inevitable. Placas, tornillos y una reconstrucción que devolviera estabilidad a una zona completamente comprometida.  
+El ambiente del quirófano, frío y preciso, contrastaba con la incertidumbre de lo que venía después.  
+
+La recuperación no fue lineal. Hubo días de avance… y otros donde incluso el más mínimo movimiento representaba un desafío.  
+La paciencia se volvió parte del tratamiento, al igual que la resistencia mental.
+</p>
 </div>
 </section>
 
 <section id="rayosx">
 <div class="card">
 <h2>Rayos X</h2>
-<p>Imágenes que muestran lo ocurrido…</p>
+<p>
+Las radiografías cuentan una historia que el cuerpo siente de otra manera.  
+En ellas se observa con claridad la fractura, la intervención, y cómo poco a poco la estructura comienza a reorganizarse.  
+
+Cada imagen representa una etapa distinta: desde el daño inicial hasta la estabilización con material médico.  
+Pero también muestran algo más: que la recuperación no es inmediata, sino un proceso progresivo.  
+
+Ver esos cambios con el tiempo permite entender que, aunque el cuerpo no vuelve exactamente a ser el mismo, sí aprende a adaptarse y reconstruirse.
+</p>
 </div>
 </section>
 
@@ -223,30 +253,34 @@ section {
 </audio>
 
 <script>
+const audio = document.getElementById('audio');
+const boton = document.querySelector('.contacto');
+const mensaje = document.getElementById('mensaje');
+
 let tiempo = 0;
 
-/* cada segundo aumenta el nivel */
+/* SONIDO */
+boton.addEventListener('mouseenter', () => {
+    audio.currentTime = 0;
+    audio.volume = 0.4;
+    audio.play();
+});
+
+/* TIEMPO PROGRESIVO */
 setInterval(() => {
     tiempo++;
-
-    // Intensidad (máx 100)
     let intensidad = Math.min(tiempo / 2, 100);
 
-    /* OSCURECER */
     document.body.style.filter = `
         brightness(${100 - intensidad * 0.3}%)
         contrast(${100 + intensidad}%)
     `;
 
-    /* GLITCH MÁS FRECUENTE */
     if (Math.random() < intensidad / 120) {
         document.body.style.transform = "translate(3px,-3px)";
-        setTimeout(() => {
-            document.body.style.transform = "translate(0,0)";
-        }, 80);
+        setTimeout(() => document.body.style.transform = "translate(0,0)", 80);
     }
 
-    /* MENSAJES MÁS SEGUIDOS */
     if (Math.random() < intensidad / 150) {
         const frasesExtra = [
             "Sigue aquí...",
@@ -259,69 +293,24 @@ setInterval(() => {
         mensaje.innerText = frasesExtra[Math.floor(Math.random() * frasesExtra.length)];
         mensaje.style.opacity = 1;
 
-        setTimeout(() => {
-            mensaje.style.opacity = 0;
-        }, 1500);
+        setTimeout(() => mensaje.style.opacity = 0, 1500);
     }
-
-    /* LATIDO MÁS INTENSO */
-    if (intensidad > 20) {
-        document.body.style.animation = "latidoGlobal 1s infinite";
-    }
-
 }, 1000);
 
-/* ANIMACIÓN LATIDO GLOBAL */
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes latidoGlobal {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.01); }
-    100% { transform: scale(1); }
-}`;
-document.head.appendChild(style);
-</script>
-
-
-
-
-
-<script>
-const audio = document.getElementById('audio');
-const boton = document.querySelector('.contacto');
-const mensaje = document.getElementById('mensaje');
-
-/* SONIDO */
-boton.addEventListener('mouseenter', () => {
-    audio.currentTime = 0;
-    audio.volume = 0.4;
-    audio.play();
-});
-
-/* MENSAJES */
+/* MENSAJES BASE */
 const frases = [
-    "No debiste mirar...",
-    "Sigue doliendo...",
-    "No termina...",
-    "Recuerda ese momento...",
-    "No puedes escapar..."
+    "Bienvenido...",
+    "sigue el boton Rojo...",
+    "No termina..."
 ];
 
 setInterval(()=>{
     if(Math.random()<0.3){
         mensaje.innerText = frases[Math.floor(Math.random()*frases.length)];
-        mensaje.style.opacity = 2;
+        mensaje.style.opacity = 1;
         setTimeout(()=>mensaje.style.opacity=0,2000);
     }
-},6000);
-
-/* GLITCH */
-setInterval(()=>{
-    if(Math.random()<0.3){
-        document.body.style.transform = "translate(2px,-2px)";
-        setTimeout(()=>document.body.style.transform="translate(0,0)",100);
-    }
-},3000);
+},4000);
 </script>
 
 </body>

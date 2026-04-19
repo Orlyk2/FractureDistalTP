@@ -36,7 +36,6 @@ nav a {
     color: #ccc;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -61,7 +60,6 @@ header {
     color: rgba(255,255,255,0.85);
     text-shadow: 0 0 20px red;
     z-index: 2;
-    max-width: 90%;
 }
 
 /* IMÁGENES */
@@ -110,7 +108,25 @@ section {
     border-left: 3px solid red;
 }
 
-/* BOTON */
+/* BOTÓN CONTINUAR */
+.btn-terror {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid red;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.btn-terror:hover {
+    background: red;
+    color: black;
+    box-shadow: 0 0 15px red;
+}
+
+/* BOTÓN CONTACTO */
 .contacto {
     position: fixed;
     bottom: 25px;
@@ -121,7 +137,6 @@ section {
     border-radius: 50%;
     animation: latido 1s infinite;
     z-index: 1001;
-    cursor: pointer;
 }
 
 @keyframes latido {
@@ -153,7 +168,7 @@ section {
     pointer-events: none;
     background: repeating-linear-gradient(
         0deg,
-        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03),
         transparent 2px
     );
     z-index: 999;
@@ -168,9 +183,30 @@ section {
     color: red;
     font-size: 20px;
     opacity: 0;
-    transition: 0.5s;
-    text-shadow: 0 0 10px red;
-    pointer-events: none;
+}
+
+/* APOYO */
+.apoyo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1002;
+}
+
+.apoyo-btn {
+    background: black;
+    color: white;
+    padding: 10px;
+    border: 1px solid red;
+    cursor: pointer;
+}
+
+.apoyo-info {
+    display: none;
+    background: black;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid red;
 }
 </style>
 </head>
@@ -187,7 +223,6 @@ section {
 </nav>
 
 <header>
-
 <h1 class="titulo">Fractura distal de peroné y tibia</h1>
 
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ed930883aa34f69ce473dc4f6414798b729c224a/IMG_20260418_114041.jpg" class="floating-img img1">
@@ -197,119 +232,86 @@ section {
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg" class="floating-img img5">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260406222339.jpg" class="floating-img img6">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260405123729.jpg" class="floating-img img7">
-
 </header>
 
 <section id="historia">
 <div class="card">
 <h2>Historia</h2>
-<p>
-Todo ocurrió en cuestión de segundos. Un movimiento mal calculado, un apoyo que no respondió como debía… y luego ese sonido seco que no se olvida.  
+<p>Todo ocurrió en cuestión de segundos. Un movimiento mal calculado, un apoyo que no respondió como debía… y luego ese sonido seco que no se olvida.  
 Al principio no fue el dolor lo que más impactó, sino la sensación de que algo no estaba en su lugar.  
 
 Los minutos posteriores fueron confusos. Intentar moverse era imposible. El cuerpo no respondía como antes, y cada intento solo confirmaba que la situación era grave.  
 
 El traslado, la espera, las primeras revisiones… todo parecía avanzar demasiado lento mientras la mente intentaba procesar lo que había pasado.  
-Ahí comenzó realmente todo: no solo una fractura, sino un proceso largo, físico y mental.
-</p>
+Ahí comenzó realmente todo: no solo una fractura, sino un proceso largo, físico y mental.</p>
+<a href="#proceso" class="btn-terror">Continuar</a>
 </div>
 </section>
 
 <section id="proceso">
 <div class="card">
 <h2>Proceso</h2>
-<p>
-El proceso médico no fue inmediato ni sencillo. Las primeras horas estuvieron llenas de evaluaciones, radiografías y decisiones que definirían el tratamiento.  
+<p>El proceso médico no fue inmediato ni sencillo. Las primeras horas estuvieron llenas de evaluaciones, radiografías y decisiones que definirían el tratamiento.  
 
 La cirugía fue inevitable. Placas, tornillos y una reconstrucción que devolviera estabilidad a una zona completamente comprometida.  
 El ambiente del quirófano, frío y preciso, contrastaba con la incertidumbre de lo que venía después.  
 
 La recuperación no fue lineal. Hubo días de avance… y otros donde incluso el más mínimo movimiento representaba un desafío.  
-La paciencia se volvió parte del tratamiento, al igual que la resistencia mental.
-</p>
+La paciencia se volvió parte del tratamiento, al igual que la resistencia mental.)</p>
+<a href="#rayosx" class="btn-terror">Continuar</a>
 </div>
 </section>
 
 <section id="rayosx">
 <div class="card">
 <h2>Rayos X</h2>
-<p>
-Las radiografías cuentan una historia que el cuerpo siente de otra manera.  
+<p>Las radiografías cuentan una historia que el cuerpo siente de otra manera.  
 En ellas se observa con claridad la fractura, la intervención, y cómo poco a poco la estructura comienza a reorganizarse.  
 
 Cada imagen representa una etapa distinta: desde el daño inicial hasta la estabilización con material médico.  
 Pero también muestran algo más: que la recuperación no es inmediata, sino un proceso progresivo.  
 
-Ver esos cambios con el tiempo permite entender que, aunque el cuerpo no vuelve exactamente a ser el mismo, sí aprende a adaptarse y reconstruirse.
-</p>
+Ver esos cambios con el tiempo permite entender que, aunque el cuerpo no vuelve exactamente a ser el mismo, sí aprende a adaptarse y reconstruirse.</p>
+<a href="#" class="btn-terror">Continuar</a>
 </div>
 </section>
 
 <a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
-<div class="tooltip">Comunícate con esta persona para más detalles</div>
+<div class="tooltip">Comunícate con esta persona</div>
+
+<div class="apoyo">
+<div class="apoyo-btn">¿Quieres apoyar a esta persona?</div>
+<div class="apoyo-info">
+<p>Davivienda: 488427057309</p>
+<p>PKO: 74102010260000140206811907</p>
+</div>
+</div>
 
 <audio id="audio">
-<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f4c3e6c0e.mp3?filename=heartbeat-110957.mp3">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f4c3e6c0e.mp3">
 </audio>
 
 <script>
+const mensaje = document.getElementById('mensaje');
 const audio = document.getElementById('audio');
 const boton = document.querySelector('.contacto');
-const mensaje = document.getElementById('mensaje');
+const apoyoBtn = document.querySelector('.apoyo-btn');
+const apoyoInfo = document.querySelector('.apoyo-info');
 
-let tiempo = 0;
-
-/* SONIDO */
-boton.addEventListener('mouseenter', () => {
-    audio.currentTime = 0;
-    audio.volume = 0.4;
-    audio.play();
+boton.addEventListener('mouseenter', ()=>{
+ audio.play();
 });
 
-/* TIEMPO PROGRESIVO */
-setInterval(() => {
-    tiempo++;
-    let intensidad = Math.min(tiempo / 2, 100);
-
-    document.body.style.filter = `
-        brightness(${100 - intensidad * 0.3}%)
-        contrast(${100 + intensidad}%)
-    `;
-
-    if (Math.random() < intensidad / 120) {
-        document.body.style.transform = "translate(3px,-3px)";
-        setTimeout(() => document.body.style.transform = "translate(0,0)", 80);
-    }
-
-    if (Math.random() < intensidad / 150) {
-        const frasesExtra = [
-            "Sigue aquí...",
-            "No puedes salir...",
-            "El dolor vuelve...",
-            "Ya es tarde...",
-            "Tu cuerpo lo recuerda..."
-        ];
-
-        mensaje.innerText = frasesExtra[Math.floor(Math.random() * frasesExtra.length)];
-        mensaje.style.opacity = 1;
-
-        setTimeout(() => mensaje.style.opacity = 0, 1500);
-    }
-}, 1000);
-
-/* MENSAJES BASE */
-const frases = [
-    "Bienvenido...",
-    "sigue el boton Rojo...",
-    "No termina..."
-];
+apoyoBtn.onclick = ()=>{
+ apoyoInfo.style.display = apoyoInfo.style.display==="block"?"none":"block";
+};
 
 setInterval(()=>{
-    if(Math.random()<0.3){
-        mensaje.innerText = frases[Math.floor(Math.random()*frases.length)];
-        mensaje.style.opacity = 1;
-        setTimeout(()=>mensaje.style.opacity=0,2000);
-    }
+ if(Math.random()<0.3){
+  mensaje.innerText="No puedes salir...";
+  mensaje.style.opacity=1;
+  setTimeout(()=>mensaje.style.opacity=0,2000);
+ }
 },4000);
 </script>
 

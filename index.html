@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Recuperación - Fractura distal</title>
-<link rel="stylesheet" href="styles.css">
+
 <style>
 body {
     margin: 0;
@@ -12,16 +12,10 @@ body {
     background: radial-gradient(circle at center, #050505, #000);
     color: #e6e6e6;
     overflow-x: hidden;
-    animation: respiracion 6s infinite;
+    transition: 0.2s;
 }
 
-@keyframes respiracion {
-    0% { background-color: #000; }
-    50% { background-color: #050505; }
-    100% { background-color: #000; }
-}
-
-/* NAV */
+/* NAV FLOTANTE */
 nav {
     position: fixed;
     top: 50%;
@@ -38,7 +32,6 @@ nav a {
     display: block;
     margin: 10px 0;
     text-decoration: none;
-    transition: 0.3s;
 }
 
 nav a:hover {
@@ -49,42 +42,32 @@ nav a:hover {
 /* HEADER */
 header {
     height: 100vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-/* TITULO EFECTO */
+/* TITULO */
 .titulo {
     font-size: clamp(24px, 5vw, 50px);
-    color: white;
-    text-shadow: 0 0 10px red;
-    animation: glitch 1.5s infinite;
+    text-shadow: 0 0 15px red;
+    z-index: 2;
 }
 
-@keyframes glitch {
-    0% { transform: skew(0deg); }
-    20% { transform: skew(-2deg); }
-    40% { transform: skew(2deg); }
-    60% { transform: skew(-1deg); }
-    80% { transform: skew(1deg); }
-    100% { transform: skew(0deg); }
-}
-
-/* IMAGENES */
+/* IMÁGENES FLOTANTES */
 .floating-img {
     position: absolute;
-    width: 160px;
+    width: 150px;
     opacity: 0.6;
     transition: 0.3s;
     filter: grayscale(100%);
 }
 
 .floating-img:hover {
-    transform: scale(1.6) rotate(2deg);
+    transform: scale(1.7);
     opacity: 1;
-    filter: grayscale(0%) contrast(120%);
+    filter: grayscale(0%) contrast(130%);
     animation: temblor 0.2s infinite;
 }
 
@@ -98,10 +81,12 @@ header {
 
 /* POSICIONES */
 .img1 { top: 10%; left: 5%; }
-.img2 { top: 20%; right: 10%; }
-.img3 { bottom: 15%; left: 15%; }
+.img2 { top: 15%; right: 10%; }
+.img3 { bottom: 15%; left: 10%; }
 .img4 { bottom: 10%; right: 5%; }
-.img5 { top: 50%; left: 45%; }
+.img5 { top: 50%; left: 40%; }
+.img6 { top: 30%; left: 70%; }
+.img7 { bottom: 30%; right: 30%; }
 
 /* SECCIONES */
 section {
@@ -113,17 +98,10 @@ section {
 .card {
     background: rgba(10,10,10,0.9);
     padding: 25px;
-    border-radius: 10px;
     border-left: 3px solid red;
-    box-shadow: 0 0 20px rgba(255,0,0,0.1);
 }
 
-.card p {
-    line-height: 1.6;
-    color: #ccc;
-}
-
-/* BOTON */
+/* BOTÓN */
 .contacto {
     position: fixed;
     bottom: 25px;
@@ -133,13 +111,12 @@ section {
     background: darkred;
     border-radius: 50%;
     animation: latido 1s infinite;
+    z-index: 1001;
     cursor: pointer;
 }
 
 @keyframes latido {
-    0% { transform: scale(1); }
     50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
 }
 
 /* TOOLTIP */
@@ -147,27 +124,52 @@ section {
     position: fixed;
     bottom: 95px;
     right: 25px;
-    background: rgba(0,0,0,0.9);
-    color: #fff;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 14px;
+    background: black;
+    padding: 10px;
     opacity: 0;
-    pointer-events: none;
-    transform: translateY(10px);
     transition: 0.3s;
-    box-shadow: 0 0 15px red;
+    color: white;
     border-left: 3px solid red;
 }
 
 .contacto:hover + .tooltip {
     opacity: 1;
-    transform: translateY(0);
+}
+
+/* GLITCH */
+.glitch {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.03) 0px,
+        transparent 2px
+    );
+    z-index: 999;
+}
+
+/* MENSAJE */
+.mensaje {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 20px;
+    opacity: 0;
+    transition: 0.5s;
+    text-shadow: 0 0 10px red;
+    pointer-events: none;
 }
 </style>
 </head>
 
 <body>
+
+<div class="glitch"></div>
+<div class="mensaje" id="mensaje"></div>
 
 <nav>
 <a href="#historia">Historia</a>
@@ -176,77 +178,150 @@ section {
 </nav>
 
 <header>
-<h1 class="titulo">Fractura distal de peroné y tibia </h1>
 
+<h1 class="titulo">Fractura distal de peroné y tibia</h1>
+
+<!-- IMÁGENES -->
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ed930883aa34f69ce473dc4f6414798b729c224a/IMG_20260418_114041.jpg" class="floating-img img1">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1c8fc085cd1ac0dd1782f67c7609cdce2fef2828/IMG20260411090254.jpg" class="floating-img img2">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1dd49497534039c423a26a4c39029535b10ffd85/IMG20260406222339.jpg" class="floating-img img3">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c773778d228a95145a06a221dacf726147046bf2/IMG20260406133355.jpg" class="floating-img img4">
 <img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg" class="floating-img img5">
 
+<!-- NUEVAS -->
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260406222339.jpg" class="floating-img img6">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2bfeb509c4c1d483875640f08ac30f2aae8d6af6/IMG20260405123729.jpg" class="floating-img img7">
+
 </header>
 
 <section id="historia">
 <div class="card">
 <h2>Historia</h2>
-<p>
-Todo comenzó en un instante…  
-un sonido seco… algo no estaba bien.  
-El dolor llegó después… y no se fue.
-</p>
+<p>Todo cambió en un instante…</p>
 </div>
 </section>
 
 <section id="proceso">
 <div class="card">
 <h2>Proceso</h2>
-<p>
-Luces frías. Silencio.  
-Días largos… noches interminables.  
-Cada movimiento… una prueba.
-</p>
+<p>Días largos… noches interminables…</p>
 </div>
 </section>
 
 <section id="rayosx">
 <div class="card">
 <h2>Rayos X</h2>
-<p>
-Imágenes que muestran lo que ocurrió…  
-y lo que tuvo que reconstruirse.
-</p>
+<p>Imágenes que muestran lo ocurrido…</p>
 </div>
 </section>
 
 <a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
 <div class="tooltip">Comunícate con esta persona para más detalles</div>
 
-<!-- AUDIO -->
-<audio id="sonidoTerror" preload="auto">
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f4c3e6c0e.mp3?filename=heartbeat-110957.mp3" type="audio/mpeg">
+<audio id="audio">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f4c3e6c0e.mp3?filename=heartbeat-110957.mp3">
 </audio>
 
-<!-- SCRIPT -->
 <script>
-const boton = document.querySelector('.contacto');
-const sonido = document.getElementById('sonidoTerror');
+let tiempo = 0;
 
-let reproduciendo = false;
+/* cada segundo aumenta el nivel */
+setInterval(() => {
+    tiempo++;
 
-boton.addEventListener('mouseenter', () => {
-    if (!reproduciendo) {
-        sonido.currentTime = 0;
-        sonido.volume = 0.4;
-        sonido.play();
-        reproduciendo = true;
+    // Intensidad (máx 100)
+    let intensidad = Math.min(tiempo / 2, 100);
+
+    /* OSCURECER */
+    document.body.style.filter = `
+        brightness(${100 - intensidad * 0.3}%)
+        contrast(${100 + intensidad}%)
+    `;
+
+    /* GLITCH MÁS FRECUENTE */
+    if (Math.random() < intensidad / 120) {
+        document.body.style.transform = "translate(3px,-3px)";
+        setTimeout(() => {
+            document.body.style.transform = "translate(0,0)";
+        }, 80);
     }
+
+    /* MENSAJES MÁS SEGUIDOS */
+    if (Math.random() < intensidad / 150) {
+        const frasesExtra = [
+            "Sigue aquí...",
+            "No puedes salir...",
+            "El dolor vuelve...",
+            "Ya es tarde...",
+            "Tu cuerpo lo recuerda..."
+        ];
+
+        mensaje.innerText = frasesExtra[Math.floor(Math.random() * frasesExtra.length)];
+        mensaje.style.opacity = 1;
+
+        setTimeout(() => {
+            mensaje.style.opacity = 0;
+        }, 1500);
+    }
+
+    /* LATIDO MÁS INTENSO */
+    if (intensidad > 20) {
+        document.body.style.animation = "latidoGlobal 1s infinite";
+    }
+
+}, 1000);
+
+/* ANIMACIÓN LATIDO GLOBAL */
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes latidoGlobal {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+}`;
+document.head.appendChild(style);
+</script>
+
+
+
+
+
+<script>
+const audio = document.getElementById('audio');
+const boton = document.querySelector('.contacto');
+const mensaje = document.getElementById('mensaje');
+
+/* SONIDO */
+boton.addEventListener('mouseenter', () => {
+    audio.currentTime = 0;
+    audio.volume = 0.4;
+    audio.play();
 });
 
-boton.addEventListener('mouseleave', () => {
-    sonido.pause();
-    sonido.currentTime = 0;
-    reproduciendo = false;
-});
+/* MENSAJES */
+const frases = [
+    "No debiste mirar...",
+    "Sigue doliendo...",
+    "No termina...",
+    "Recuerda ese momento...",
+    "No puedes escapar..."
+];
+
+setInterval(()=>{
+    if(Math.random()<0.3){
+        mensaje.innerText = frases[Math.floor(Math.random()*frases.length)];
+        mensaje.style.opacity = 2;
+        setTimeout(()=>mensaje.style.opacity=0,2000);
+    }
+},6000);
+
+/* GLITCH */
+setInterval(()=>{
+    if(Math.random()<0.3){
+        document.body.style.transform = "translate(2px,-2px)";
+        setTimeout(()=>document.body.style.transform="translate(0,0)",100);
+    }
+},3000);
 </script>
 
 </body>

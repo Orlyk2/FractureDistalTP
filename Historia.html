@@ -3,243 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Historia - Fractura distal</title>
+<title>Historia - Mi Fractura</title>
+
+<link rel="stylesheet" href="styles.css">
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle, #0a0a0a, #000);
-    color: white;
+body{
+    background:black;
+    color:white;
+    font-family: Arial;
+    margin:0;
+    overflow-x:hidden;
 }
 
-/* NAV */
-nav {
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.8);
-    padding: 15px;
-    border-radius: 15px;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
+/* TITULO */
+h1{
+    text-align:center;
+    font-size:3em;
+    margin-top:40px;
+    color:white;
+    text-shadow:0 0 20px red;
+    animation: glitch 1s infinite;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 10px 0;
-    font-weight: bold;
+@keyframes glitch{
+    0%{text-shadow:2px 0 red;}
+    50%{text-shadow:-2px 0 blue;}
+    100%{text-shadow:2px 0 red;}
 }
 
-nav a:hover {
-    color: #ff2e63;
+/* CONTENEDOR */
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+    margin-top:50px;
+    line-height:1.8;
+    font-size:1.2em;
 }
 
-/* BOTÓN CRUZ */
-.contacto {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background: red;
-    border-radius: 10px;
-    animation: miedo 1.2s infinite;
-    z-index: 1000;
+/* TEXTO EFECTO */
+.historia{
+    opacity:0;
+    transform:translateY(50px);
+    transition: all 1s ease;
 }
 
-/* Cruz */
-.contacto::before,
-.contacto::after {
-    content: '';
-    position: absolute;
-    background: white;
+.historia.visible{
+    opacity:1;
+    transform:translateY(0);
 }
 
-.contacto::before {
-    width: 15px;
-    height: 40px;
-    top: 10px;
-    left: 22px;
+/* FRASES IMPACTO */
+.frase{
+    color:red;
+    font-weight:bold;
+    text-shadow:0 0 10px red;
 }
 
-.contacto::after {
-    width: 40px;
-    height: 15px;
-    top: 22px;
-    left: 10px;
-}
-
-/* Animación */
-@keyframes miedo {
-    0% { transform: scale(1); box-shadow: 0 0 10px red; }
-    50% { transform: scale(1.2); box-shadow: 0 0 30px red; }
-    100% { transform: scale(1); box-shadow: 0 0 10px red; }
-}
-
-/* CONTENIDO */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 80px 20px;
-}
-
-h1 {
-    text-align: center;
-    font-size: clamp(24px, 5vw, 42px);
-    text-shadow: 0 0 15px red;
-}
-
-.card {
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    line-height: 1.7;
-}
-
-h2 {
-    margin-top: 30px;
-    color: #ff2e63;
-}
-
-/* LISTAS */
-ul {
-    padding-left: 20px;
-}
-
-/* GALERÍA */
-.galeria {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.galeria img {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    nav {
-        left: 5px;
-        padding: 10px;
-    }
+/* BOTON VOLVER */
+.volver{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    padding:10px 20px;
+    background:red;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:10px;
 }
 </style>
-
 </head>
 
 <body>
 
-<nav>
-<a href="index.html">Inicio</a>
-</nav>
+<h1>MI HISTORIA</h1>
 
 <div class="container">
 
-<h1>Mi proceso: desde el hospital hasta la cirugía final</h1>
-
-<div class="card">
-
-<p>
-Todo comenzó el día que llegué al hospital después del accidente. Desde el primer momento supe que no era algo simple. El dolor era intenso, constante, y lo más evidente era que no podía apoyar la pierna.
+<p class="historia">
+Todo comenzó en una noche que parecía normal… hasta que dejó de serlo.
 </p>
 
-<p>
-Pero no solo era la pierna. También tenía <strong>6 heridas cortopunzantes</strong> en el brazo y la espalda, con un sangrado considerable. Fue una situación crítica.
+<p class="historia">
+Fui víctima de un <span class="frase">atraco</span>, un momento que cambió todo en segundos.
+Un golpe fuerte, directo… y después el dolor.
 </p>
 
-<p>
-A pesar de la gravedad, <strong>ninguna de las heridas comprometió órganos vitales</strong>. El equipo médico actuó rápido, controló el sangrado y cerró las heridas a tiempo, evitando complicaciones mayores.
+<p class="historia">
+Mi tobillo derecho no era el mismo. Había una deformidad evidente, inflamación y una sensación que no se puede explicar fácilmente.
+Era el inicio de algo mucho más grande.
 </p>
 
-<h2>🏥 Los primeros días</h2>
-<p>
-Los exámenes confirmaron una fractura distal de tibia y peroné con compromiso del tobillo. No podían operarme de inmediato por la inflamación.
+<p class="historia">
+En el hospital, los médicos confirmaron lo peor: 
+<span class="frase">luxofractura trimaléolar</span>, una de las lesiones más complejas del tobillo.
 </p>
 
-<ul>
-<li>Dolor constante</li>
-<li>Dificultad para dormir</li>
-<li>Dependencia total</li>
-<li>Frustración</li>
-</ul>
-
-<h2>🔩 El fijador externo</h2>
-<p>
-Me colocaron un tutor externo para estabilizar la pierna. Fue incómodo: molestias, sangrados leves y presión intensa al bajar la pierna.
+<p class="historia">
+Intentaron una reducción inicial… pero <span class="frase">no funcionó</span>.
+Eso significaba una sola cosa: cirugía.
 </p>
 
-<h2>⏳ Hospitalización</h2>
-<ul>
-<li>Dormía mal</li>
-<li>Dependía de otros</li>
-<li>Inflamación persistente</li>
-</ul>
-
-<h2>🛠️ Cirugía definitiva</h2>
-<p>
-Duró aproximadamente 5 horas. Fue compleja:
+<p class="historia">
+Los días en el hospital se hicieron largos.
+No era solo el dolor físico… era la incertidumbre, la espera, el no saber cuándo todo volvería a la normalidad.
 </p>
 
-<ul>
-<li>Hueso fragmentado</li>
-<li>Reconstrucción parcial</li>
-<li>Uso de placas y tornillos</li>
-</ul>
-
-<h2>💉 Postoperatorio</h2>
-<p>
-Dolor controlado. Podía mover los dedos, lo que indicaba que no hubo daño neurológico.
+<p class="historia">
+El procedimiento quirúrgico fue complejo:
+placas, tornillos, fijaciones… incluso dificultades técnicas durante la operación.
+Pero el objetivo era uno: reconstruir lo que se había roto.
 </p>
 
-<h2>🩻 Resultados</h2>
-<ul>
-<li>Placas bien posicionadas</li>
-<li>Estructura estabilizada</li>
-<li>Recuperación funcional</li>
-</ul>
+<p class="historia">
+Después de la cirugía, nada volvió a ser fácil.
+Muletas, reposo total, dependencia… y un proceso largo de recuperación.
+</p>
 
-<h2>🔄 Estado actual</h2>
-<ul>
-<li>Con férula</li>
-<li>Sin apoyar</li>
-<li>Dolor controlado</li>
-</ul>
+<p class="historia">
+Pero aquí es donde cambia la historia:
+<span class="frase">no se trata de la caída… sino de cómo te levantas.</span>
+</p>
 
-<h2>🧠 Reflexión</h2>
-<p>
-No fue solo una fractura. Fue un proceso físico y mental donde la paciencia y la resistencia fueron clave.
+<p class="historia">
+Esta no es solo una fractura.
+Es una prueba.
+Es resistencia.
+Es proceso.
 </p>
 
 </div>
 
-<div class="galeria">
+<button class="volver" onclick="window.location.href='index.html'">
+Volver
+</button>
 
-<h2>Resultado final</h2>
+<script>
+const textos = document.querySelectorAll('.historia');
 
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+function mostrarTexto(){
+    textos.forEach((el, i)=>{
+        setTimeout(()=>{
+            el.classList.add('visible');
+        }, i * 800);
+    });
+}
 
-</div>
-
-</div>
-
-<!-- BOTÓN -->
-<a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
+window.onload = mostrarTexto;
+</script>
 
 </body>
 </html>

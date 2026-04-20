@@ -1,6 +1,91 @@
 <body class="historia-page">
 
-<div class="glitch-overlay"></div>
+<style>
+body.historia-page {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0b0f14;
+    color: #e6edf3;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #111821;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+}
+
+/* TITULO */
+h1 {
+    text-align: center;
+    color: #4fc3f7;
+    letter-spacing: 2px;
+    margin-top: 30px;
+}
+
+/* SUBTITULOS */
+h2.historia {
+    color: #81d4fa;
+    margin-top: 30px;
+}
+
+/* PARRAFOS */
+.historia {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    line-height: 1.7;
+}
+
+/* APARICION */
+.historia.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FRASES IMPORTANTES */
+.frase {
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+/* MENSAJE FLOTANTE */
+#mensaje {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #4fc3f7;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+/* BOTON VOLVER */
+.btn-volver {
+    display: block;
+    width: 220px;
+    margin: 40px auto 0;
+    padding: 12px;
+    text-align: center;
+    background: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background: #42a5f5;
+    transform: scale(1.05);
+}
+</style>
+
 <div id="mensaje"></div>
 
 <h1>MI HISTORIA CLÍNICA</h1>
@@ -106,10 +191,12 @@ Este caso refleja no solo la importancia del tratamiento médico oportuno, sino 
 <span class="frase">No se trata solo de una fractura, sino de todo el proceso de reconstrucción física y mental.</span>
 </p>
 
+<!-- BOTON VOLVER -->
+<a href="index.html" class="btn-volver">⬅ Volver a la página principal</a>
+
 </div>
 
 <script>
-// animación aparición
 const textos = document.querySelectorAll('.historia');
 
 function mostrarTexto(){
@@ -122,7 +209,6 @@ function mostrarTexto(){
 
 window.onload = mostrarTexto;
 
-// mensaje ambiente
 const mensaje = document.getElementById("mensaje");
 
 setInterval(()=>{

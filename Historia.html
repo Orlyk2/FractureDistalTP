@@ -1,11 +1,9 @@
-<body class="historia-page">
-
 <style>
 body.historia-page {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #0b0f14;
-    color: #e6edf3;
+    font-family: 'Times New Roman', serif;
+    background: linear-gradient(to bottom, #e8eef2, #cfd8dc);
+    color: #1c1c1c;
 }
 
 /* CONTENEDOR */
@@ -13,31 +11,30 @@ body.historia-page {
     max-width: 900px;
     margin: 60px auto;
     padding: 30px;
-    background: #111821;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    background: #ffffff;
+    border-left: 6px solid #90a4ae;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 /* TITULO */
 h1 {
     text-align: center;
-    color: #4fc3f7;
-    letter-spacing: 2px;
-    margin-top: 30px;
+    color: #455a64;
+    letter-spacing: 1px;
 }
 
 /* SUBTITULOS */
 h2.historia {
-    color: #81d4fa;
+    color: #607d8b;
     margin-top: 30px;
 }
 
 /* PARRAFOS */
 .historia {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
     transition: all 0.6s ease;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 /* APARICION */
@@ -46,181 +43,42 @@ h2.historia {
     transform: translateY(0);
 }
 
-/* FRASES IMPORTANTES */
+/* FRASES CLAVE */
 .frase {
-    color: #4fc3f7;
-    font-weight: bold;
+    color: #37474f;
+    font-style: italic;
 }
 
-/* MENSAJE FLOTANTE */
+/* MENSAJE */
 #mensaje {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: rgba(0,0,0,0.7);
+    background: rgba(255,255,255,0.8);
     padding: 10px 20px;
-    border-radius: 8px;
-    color: #4fc3f7;
+    border-radius: 6px;
+    color: #455a64;
     opacity: 0;
     transition: 0.5s;
+    font-size: 14px;
 }
 
-/* BOTON VOLVER */
+/* BOTON FLOTANTE */
 .btn-volver {
-    display: block;
-    width: 220px;
-    margin: 40px auto 0;
-    padding: 12px;
-    text-align: center;
-    background: #1976d2;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #78909c;
     color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
     text-decoration: none;
-    border-radius: 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: 0.3s;
-    font-weight: bold;
 }
 
 .btn-volver:hover {
-    background: #42a5f5;
-    transform: scale(1.05);
+    background: #546e7a;
 }
 </style>
-
-<div id="mensaje"></div>
-
-<h1>MI HISTORIA CLÍNICA</h1>
-
-<div class="container">
-
-<h2 class="historia">Introducción</h2>
-
-<p class="historia">
-El presente documento describe de manera detallada el proceso clínico, médico y personal vivido a raíz de una lesión traumática grave en el tobillo derecho. 
-Este caso no solo representa una condición ortopédica compleja, sino también una experiencia integral que involucra factores físicos, emocionales y funcionales.
-</p>
-
-<p class="historia">
-A través de esta narrativa, se expone el desarrollo de los hechos desde el momento del trauma inicial, pasando por el diagnóstico, la intervención quirúrgica, la hospitalización y el proceso de recuperación.
-</p>
-
-<h2 class="historia">Antecedentes del Evento Traumático</h2>
-
-<p class="historia">
-El evento que dio origen a esta condición ocurrió en el contexto de un <span class="frase">acto violento (atraco)</span>. 
-Durante este suceso, se produjo un impacto directo sobre el tobillo derecho, generando una lesión inmediata.
-</p>
-
-<p class="historia">
-Tras el incidente, se presentó dolor intenso, deformidad visible en la articulación afectada e incapacidad total para la movilización, evidenciando una lesión de alta gravedad.
-</p>
-
-<h2 class="historia">Evaluación Clínica y Diagnóstico</h2>
-
-<p class="historia">
-Una vez en el centro médico, se realizaron estudios clínicos y radiográficos que permitieron establecer el diagnóstico de 
-<span class="frase">luxofractura trimaléolar de tobillo derecho</span>.
-</p>
-
-<p class="historia">
-Esta condición implica la fractura de los tres maléolos del tobillo, acompañada de una dislocación articular, comprometiendo la estabilidad estructural.
-</p>
-
-<p class="historia">
-Inicialmente, se intentó una reducción cerrada; sin embargo, este procedimiento no tuvo éxito debido al grado de desplazamiento de la fractura.
-</p>
-
-<h2 class="historia">Hospitalización</h2>
-
-<p class="historia">
-Debido a la complejidad del caso, fue necesaria la hospitalización durante varios días, donde se realizaron controles constantes del dolor, monitoreo clínico y preparación para la cirugía.
-</p>
-
-<p class="historia">
-Durante este periodo, además del manejo médico, se vivió un proceso emocional marcado por la incertidumbre, la dependencia y la adaptación a una nueva condición física.
-</p>
-
-<h2 class="historia">Intervención Quirúrgica</h2>
-
-<p class="historia">
-El tratamiento definitivo consistió en una cirugía de reducción abierta con fijación interna, utilizando placas y tornillos para restablecer la anatomía del tobillo.
-</p>
-
-<p class="historia">
-Durante el procedimiento se presentaron dificultades técnicas, lo que aumentó la complejidad de la intervención, aunque se logró una estabilización adecuada.
-</p>
-
-<p class="historia">
-Este tipo de cirugía requiere precisión, ya que una mala alineación puede afectar la funcionalidad futura de la articulación.
-</p>
-
-<h2 class="historia">Postoperatorio y Recuperación</h2>
-
-<p class="historia">
-Posterior a la cirugía, se inició el proceso postoperatorio, caracterizado por dolor controlado, inmovilización y restricción total de la carga sobre la extremidad afectada.
-</p>
-
-<p class="historia">
-Se indicaron medidas como reposo, uso de muletas, seguimiento médico y rehabilitación progresiva.
-</p>
-
-<p class="historia">
-El proceso de recuperación es prolongado y exige disciplina, paciencia y compromiso constante.
-</p>
-
-<h2 class="historia">Impacto Funcional y Personal</h2>
-
-<p class="historia">
-Más allá del aspecto clínico, esta experiencia generó un impacto significativo en la vida diaria, limitando actividades básicas como caminar o mantenerse de pie.
-</p>
-
-<p class="historia">
-También implicó un proceso emocional complejo, enfrentando dependencia, frustración y cambios en la rutina.
-</p>
-
-<h2 class="historia">Conclusión</h2>
-
-<p class="historia">
-La luxofractura trimaléolar es una lesión de alta complejidad que requiere manejo especializado y un proceso de recuperación prolongado.
-</p>
-
-<p class="historia">
-Este caso refleja no solo la importancia del tratamiento médico oportuno, sino también la capacidad de adaptación frente a la adversidad.
-</p>
-
-<p class="historia">
-<span class="frase">No se trata solo de una fractura, sino de todo el proceso de reconstrucción física y mental.</span>
-</p>
-
-<!-- BOTON VOLVER -->
-<a href="index.html" class="btn-volver">⬅ Volver a la página principal</a>
-
-</div>
-
-<script>
-const textos = document.querySelectorAll('.historia');
-
-function mostrarTexto(){
-    textos.forEach((el, i)=>{
-        setTimeout(()=>{
-            el.classList.add('visible');
-        }, i * 400);
-    });
-}
-
-window.onload = mostrarTexto;
-
-const mensaje = document.getElementById("mensaje");
-
-setInterval(()=>{
-    if(Math.random()<0.4){
-        mensaje.textContent = "El proceso continúa...";
-        mensaje.style.opacity = "1";
-
-        setTimeout(()=>{
-            mensaje.style.opacity = "0";
-        },2000);
-    }
-},4000);
-</script>
-
-</body>

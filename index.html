@@ -292,29 +292,8 @@ Ver esos cambios con el tiempo permite entender que, aunque el cuerpo no vuelve 
 <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5f4c3e6c0e.mp3">
 </audio>
 
-<script>
-const mensaje = document.getElementById('mensaje');
-const audio = document.getElementById('audio');
-const boton = document.querySelector('.contacto');
-const apoyoBtn = document.querySelector('.apoyo-btn');
-const apoyoInfo = document.querySelector('.apoyo-info');
+<script src="script.js"></script>
 
-boton.addEventListener('mouseenter', ()=>{
- audio.play();
-});
-
-apoyoBtn.onclick = ()=>{
- apoyoInfo.style.display = apoyoInfo.style.display==="block"?"none":"block";
-};
-
-setInterval(()=>{
- if(Math.random()<0.3){
-  mensaje.innerText="No puedes salir...";
-  mensaje.style.opacity=1;
-  setTimeout(()=>mensaje.style.opacity=0,2000);
- }
-},4000);
-</script>
 
 </body>
 </html>

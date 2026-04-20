@@ -15,6 +15,7 @@ body {
     transition: 0.2s;
 }
 
+/* NAV CABECERA */
 nav {
     position: fixed;
     top: 0;
@@ -42,6 +43,7 @@ nav a:hover {
     text-shadow: 0 0 10px red;
 }
 
+/* HEADER */
 header {
     height: 100vh;
     margin-top: 70px;
@@ -51,6 +53,7 @@ header {
     align-items: center;
 }
 
+/* TITULO */
 .titulo {
     font-size: clamp(32px, 6vw, 70px);
     text-align: center;
@@ -59,6 +62,7 @@ header {
     z-index: 2;
 }
 
+/* IMÁGENES */
 .floating-img {
     position: absolute;
     width: 150px;
@@ -67,6 +71,15 @@ header {
     filter: grayscale(100%);
 }
 
+@keyframes temblor {
+    0% { transform: translate(0,0); }
+    25% { transform: translate(2px,-2px); }
+    50% { transform: translate(-2px,2px); }
+    75% { transform: translate(2px,2px); }
+    100% { transform: translate(0,0); }
+}
+
+/* POSICIONES */
 .img1 { top: 10%; left: 5%; }
 .img2 { top: 15%; right: 10%; }
 .img3 { bottom: 15%; left: 10%; }
@@ -75,6 +88,7 @@ header {
 .img6 { top: 30%; left: 70%; }
 .img7 { bottom: 30%; right: 30%; }
 
+/* SECCIONES */
 section {
     padding: 80px 20px;
     max-width: 900px;
@@ -87,6 +101,7 @@ section {
     border-left: 3px solid red;
 }
 
+/* BOTÓN CONTINUAR */
 .btn-terror {
     display: inline-block;
     margin-top: 20px;
@@ -104,6 +119,7 @@ section {
     box-shadow: 0 0 15px red;
 }
 
+/* BOTÓN CONTACTO */
 .contacto {
     position: fixed;
     bottom: 25px;
@@ -120,6 +136,7 @@ section {
     50% { transform: scale(1.2); }
 }
 
+/* TOOLTIP */
 .tooltip {
     position: fixed;
     bottom: 95px;
@@ -136,6 +153,7 @@ section {
     opacity: 1;
 }
 
+/* GLITCH */
 .glitch {
     position: fixed;
     width: 100%;
@@ -149,6 +167,7 @@ section {
     z-index: 999;
 }
 
+/* MENSAJE */
 .mensaje {
     position: fixed;
     top: 20%;
@@ -159,6 +178,7 @@ section {
     opacity: 0;
 }
 
+/* APOYO */
 .apoyo {
     position: fixed;
     bottom: 20px;
@@ -211,18 +231,27 @@ section {
 <section id="historia">
 <div class="card">
 <h2>Historia</h2>
-<p>Todo ocurrió en cuestión de segundos... (contenido igual)</p>
+<p>Todo ocurrió en cuestión de segundos. Un movimiento mal calculado, un apoyo que no respondió como debía… y luego ese sonido seco que no se olvida.  
+Al principio no fue el dolor lo que más impactó, sino la sensación de que algo no estaba en su lugar.  
 
-<!-- 🔥 AQUÍ ESTÁ EL CAMBIO -->
-<a href="Historia.html" class="btn-terror">Continuar</a>
+Los minutos posteriores fueron confusos. Intentar moverse era imposible. El cuerpo no respondía como antes, y cada intento solo confirmaba que la situación era grave.  
 
+El traslado, la espera, las primeras revisiones… todo parecía avanzar demasiado lento mientras la mente intentaba procesar lo que había pasado.  
+Ahí comenzó realmente todo: no solo una fractura, sino un proceso largo, físico y mental.</p>
+<a href="#proceso" class="btn-terror">Continuar</a>
 </div>
 </section>
 
 <section id="proceso">
 <div class="card">
 <h2>Proceso</h2>
-<p>El proceso médico no fue inmediato...</p>
+<p>El proceso médico no fue inmediato ni sencillo. Las primeras horas estuvieron llenas de evaluaciones, radiografías y decisiones que definirían el tratamiento.  
+
+La cirugía fue inevitable. Placas, tornillos y una reconstrucción que devolviera estabilidad a una zona completamente comprometida.  
+El ambiente del quirófano, frío y preciso, contrastaba con la incertidumbre de lo que venía después.  
+
+La recuperación no fue lineal. Hubo días de avance… y otros donde incluso el más mínimo movimiento representaba un desafío.  
+La paciencia se volvió parte del tratamiento, al igual que la resistencia mental.)</p>
 <a href="#rayosx" class="btn-terror">Continuar</a>
 </div>
 </section>
@@ -230,7 +259,13 @@ section {
 <section id="rayosx">
 <div class="card">
 <h2>Rayos X</h2>
-<p>Las radiografías cuentan una historia...</p>
+<p>Las radiografías cuentan una historia que el cuerpo siente de otra manera.  
+En ellas se observa con claridad la fractura, la intervención, y cómo poco a poco la estructura comienza a reorganizarse.  
+
+Cada imagen representa una etapa distinta: desde el daño inicial hasta la estabilización con material médico.  
+Pero también muestran algo más: que la recuperación no es inmediata, sino un proceso progresivo.  
+
+Ver esos cambios con el tiempo permite entender que, aunque el cuerpo no vuelve exactamente a ser el mismo, sí aprende a adaptarse y reconstruirse.</p>
 <a href="#" class="btn-terror">Continuar</a>
 </div>
 </section>
@@ -251,6 +286,7 @@ section {
 </audio>
 
 <script src="script.js"></script>
+
 
 </body>
 </html>

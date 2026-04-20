@@ -47,3 +47,26 @@
     z-index: 997;
     mix-blend-mode: screen;
 }
+.floating-img {
+    position: absolute;
+    width: clamp(90px, 12vw, 160px); /* adaptable a pantalla */
+    opacity: 0.6;
+    transition: transform 0.4s ease, opacity 0.3s, filter 0.3s;
+    filter: grayscale(100%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* cuando está activa */
+.floating-img.active {
+    transform: scale(1.4); /* zoom más controlado */
+    opacity: 1;
+    filter: grayscale(0%) contrast(130%);
+    z-index: 10; /* se pone encima */
+}
+
+/* cuando hay una activa, las otras bajan */
+.floating-img.dim {
+    opacity: 0.2;
+    transform: scale(0.9);
+}

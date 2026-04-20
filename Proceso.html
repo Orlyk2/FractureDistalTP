@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proceso - Recuperación</title>
+<title>Proceso Clínico - Recuperación</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: radial-gradient(circle, #0a0a0a, #000);
-    color: white;
+    font-family: 'Courier New', monospace;
+    background: radial-gradient(circle at center, #050505, #000);
+    color: #e6e6e6;
 }
 
-/* NAV SOLO VOLVER */
+/* NAV */
 nav {
     position: fixed;
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     padding: 15px;
-    border-radius: 15px;
+    border-left: 3px solid red;
     z-index: 1000;
 }
 
@@ -29,81 +29,48 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px;
-    background: rgba(255,0,0,0.2);
-    border-radius: 8px;
-    display: block;
-    text-align: center;
-    transition: 0.3s;
 }
 
-nav a:hover {
-    background: red;
-    transform: scale(1.05);
-}
-
-/* BOTÓN CRUZ */
-.contacto {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background: red;
-    border-radius: 10px;
-    animation: miedo 1.2s infinite;
-    z-index: 1000;
-}
-
-.contacto::before,
-.contacto::after {
-    content: '';
-    position: absolute;
-    background: white;
-}
-
-.contacto::before {
-    width: 15px;
-    height: 40px;
-    top: 10px;
-    left: 22px;
-}
-
-.contacto::after {
-    width: 40px;
-    height: 15px;
-    top: 22px;
-    left: 10px;
-}
-
-@keyframes miedo {
-    0% { transform: scale(1);}
-    50% { transform: scale(1.2);}
-    100% { transform: scale(1);}
-}
-
-/* CONTENIDO */
+/* CONTENEDOR */
 .container {
     max-width: 1000px;
     margin: auto;
     padding: 80px 20px;
 }
 
+/* TITULOS */
 h1 {
     text-align: center;
+    font-size: 40px;
     text-shadow: 0 0 20px red;
 }
 
 h2 {
     color: #ff2e63;
-    margin-top: 40px;
+    border-left: 3px solid red;
+    padding-left: 10px;
+    margin-top: 50px;
 }
 
+h3 {
+    color: #aaa;
+}
+
+/* TARJETAS */
+.card {
+    background: rgba(10,10,10,0.9);
+    padding: 25px;
+    margin-top: 20px;
+    border-left: 3px solid red;
+}
+
+/* TEXTO */
 p {
-    line-height: 1.6;
+    line-height: 1.7;
+    text-align: justify;
 }
 
-/* GALERÍA */
+/* GALERIA */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -115,18 +82,28 @@ p {
     width: 100%;
     border-radius: 10px;
     transition: 0.3s;
+    filter: grayscale(100%);
 }
 
 .grid img:hover {
     transform: scale(1.05);
+    filter: grayscale(0%);
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    nav {
-        left: 5px;
-        padding: 10px;
-    }
+/* BOTÓN CONTACTO */
+.contacto {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: darkred;
+    border-radius: 50%;
+    animation: latido 1s infinite;
+}
+
+@keyframes latido {
+    50% { transform: scale(1.2); }
 }
 </style>
 </head>
@@ -139,74 +116,91 @@ p {
 
 <div class="container">
 
-<h1>Proceso real de recuperación</h1>
+<h1>Proceso Clínico y Evolución del Paciente</h1>
 
-<h2>💥 El inicio: trauma y urgencia</h2>
+<div class="card">
+<h2>1. Ingreso a urgencias</h2>
 <p>
-Todo comenzó con un impacto fuerte y un dolor inmediato. La pierna no respondía y el cuerpo reflejaba la gravedad del momento.
-La escena era crítica, y desde ese instante comenzó un proceso médico complejo.
+El paciente masculino de 38 años ingresa al servicio de urgencias tras un evento traumático de alta energía. 
+Se documenta una luxofractura bimaléolar de tobillo derecho asociada a fractura distal de peroné tipo Weber B con conminución. :contentReference[oaicite:0]{index=0}
 </p>
 
-<div class="grid">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/2482ebfcebbe88905736a7de280f6c9099657bb4/IMG20260405123729.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1bd6b1d4a6fe31d9577aa1b7798f46752874298/IMG20260405123330.jpg">
+<p>
+Durante la valoración inicial se evidencia deformidad, edema significativo y compromiso vascular transitorio, 
+el cual se restablece tras maniobras de reducción cerrada. Se decide hospitalización inmediata y manejo quirúrgico.
+</p>
 </div>
 
-<h2>🩸 Días críticos: dolor y sangrado</h2>
+<div class="card">
+<h2>2. Manejo inicial y estabilización</h2>
 <p>
-Los primeros días fueron los más difíciles. La inflamación, el dolor constante y el sangrado evidenciaban la gravedad de la lesión.
-Cada movimiento era limitado y dependía completamente de ayuda externa.
+Se realiza reducción cerrada e inmovilización inicial. Posteriormente, debido a la inestabilidad de la lesión, 
+se coloca un tutor externo transarticular como medida temporal para mantener la alineación ósea y controlar el daño en tejidos blandos. :contentReference[oaicite:1]{index=1}
 </p>
 
-<div class="grid">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1c8fc085cd1ac0dd1782f67c7609cdce2fef2828/IMG20260411090254.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/1dd49497534039c423a26a4c39029535b10ffd85/IMG20260406222339.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c773778d228a95145a06a221dacf726147046bf2/IMG20260406133355.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/61827272ca69763670fbf77a0481b1062fec8c36/IMG20260405182209.jpg">
+<p>
+El paciente permanece hemodinámicamente estable, alerta, sin signos de infección y con adecuada perfusión distal, 
+lo que indica una respuesta favorable al manejo inicial.
+</p>
 </div>
 
-<h2>🔩 Estabilización con tutor externo</h2>
+<div class="card">
+<h2>3. Evolución intrahospitalaria</h2>
 <p>
-Para evitar un mayor daño, se implementó un fijador externo.
-Aunque incómodo, fue clave para mantener la alineación del hueso mientras bajaba la inflamación.
+Durante la hospitalización, el paciente presenta una evolución clínica estable: sin fiebre, con dolor controlado 
+y sin signos de sangrado activo ni secreción en los sitios de fijación. :contentReference[oaicite:2]{index=2}
 </p>
 
-<h2>🩻 Evaluación médica</h2>
 <p>
-Los estudios confirmaron una fractura compleja de tibia y peroné.
-Las imágenes mostraban desplazamiento y compromiso del tobillo.
+Se observa disminución progresiva del edema y adecuada movilidad de los dedos, con llenado capilar menor a 2 segundos, 
+lo que descarta compromiso neurovascular distal. :contentReference[oaicite:3]{index=3}
 </p>
 
-<div class="grid">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121221.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121238.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121354.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/0d7d72955c981067575fb33abc0aee75d5115105/IMG_20260418_121734.jpg">
+<p>
+El manejo incluye analgesia, antibióticos, anticoagulación preventiva y medidas antiedema como elevación del miembro.
+</p>
 </div>
 
-<h2>🛠️ Cirugía y reconstrucción</h2>
+<div class="card">
+<h2>4. Procedimiento quirúrgico definitivo</h2>
 <p>
-La cirugía fue un punto clave. Se colocaron placas y tornillos para estabilizar el tobillo.
-El procedimiento fue complejo debido al estado del hueso.
+Una vez las condiciones de tejidos blandos lo permiten, se realiza intervención quirúrgica para la reconstrucción del tobillo, 
+incluyendo reducción anatómica y fijación interna con placas y tornillos.
 </p>
 
-<div class="grid">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130745.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130912.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/59256e9415aa2388e8d40ed69a242a99b539ce74/IMG_20260418_130704.jpg">
+<p>
+El procedimiento se ejecuta sin complicaciones, logrando estabilidad estructural adecuada confirmada mediante fluoroscopia. :contentReference[oaicite:4]{index=4}
+</p>
+
+<p>
+Se realiza cierre por planos y protección de la extremidad con férula posterior.
+</p>
 </div>
 
-<h2>🦶 Resultado final</h2>
+<div class="card">
+<h2>5. Estado actual del paciente</h2>
 <p>
-Las imágenes finales muestran una estructura estabilizada.
-Aunque no es idéntica a la original, representa un gran avance en la recuperación.
+En la evolución más reciente, el paciente se encuentra en condiciones generales estables, sin signos infecciosos, 
+con adecuada cicatrización y control del dolor. :contentReference[oaicite:5]{index=5}
 </p>
 
-<div class="grid">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
-<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+<p>
+El tutor externo se mantiene en adecuada posición, sin complicaciones asociadas, 
+y el proceso de recuperación continúa bajo vigilancia médica estricta.
+</p>
+</div>
+
+<div class="card">
+<h2>6. Análisis clínico</h2>
+<p>
+El caso corresponde a una lesión compleja de tobillo con compromiso trimaléolar, 
+que requirió manejo escalonado: estabilización inicial, control de tejidos blandos y cirugía definitiva.
+</p>
+
+<p>
+La evolución favorable del paciente demuestra la importancia del manejo oportuno, 
+la vigilancia clínica continua y la correcta planificación quirúrgica en este tipo de traumas.
+</p>
 </div>
 
 </div>
@@ -214,4 +208,4 @@ Aunque no es idéntica a la original, representa un gran avance en la recuperaci
 <a href="https://wa.me/573136299375" target="_blank" class="contacto"></a>
 
 </body>
-  </html>
+</html>

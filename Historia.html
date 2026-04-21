@@ -1,84 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Historia Clínica Completa</title>
+
 <style>
-body.historia-page {
+body {
     margin: 0;
-    font-family: 'Times New Roman', serif;
-    background: linear-gradient(to bottom, #e8eef2, #cfd8dc);
-    color: #1c1c1c;
+    background: #0b0f12;
+    font-family: 'Courier New', monospace;
+    color: #cfd8dc;
+}
+
+/* EFECTO LUZ HOSPITAL */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.03), #000);
+    animation: luz 6s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes luz {
+    0% {opacity: 0.2;}
+    100% {opacity: 0.5;}
 }
 
 /* CONTENEDOR */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 60px auto;
     padding: 30px;
-    background: #ffffff;
-    border-left: 6px solid #90a4ae;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background: rgba(10,10,10,0.95);
+    border: 1px solid #1c1c1c;
+    box-shadow: 0 0 30px black;
 }
 
-/* TITULO */
+/* TITULOS */
 h1 {
     text-align: center;
-    color: #455a64;
-    letter-spacing: 1px;
+    color: #90a4ae;
+    letter-spacing: 2px;
 }
 
-/* SUBTITULOS */
-h2.historia {
-    color: #607d8b;
-    margin-top: 30px;
+h2 {
+    color: #b0bec5;
+    border-left: 4px solid #ff5252;
+    padding-left: 10px;
+    margin-top: 40px;
 }
 
-/* PARRAFOS */
-.historia {
-    opacity: 0;
-    transform: translateY(15px);
-    transition: all 0.6s ease;
+/* TEXTO */
+p {
     line-height: 1.8;
+    text-align: justify;
 }
 
-/* APARICION */
-.historia.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* DATOS PROTEGIDOS */
+.oculto {
+    background: #111;
+    color: transparent;
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* FRASES CLAVE */
-.frase {
-    color: #37474f;
-    font-style: italic;
+.oculto:hover {
+    color: #ff5252;
+    text-shadow: none;
 }
 
-/* MENSAJE */
-#mensaje {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(255,255,255,0.8);
-    padding: 10px 20px;
-    border-radius: 6px;
-    color: #455a64;
-    opacity: 0;
-    transition: 0.5s;
-    font-size: 14px;
+/* IMAGENES */
+.img-box {
+    margin: 25px 0;
+    text-align: center;
 }
 
-/* BOTON FLOTANTE */
+.img-box img {
+    width: 100%;
+    max-width: 500px;
+    filter: grayscale(100%) contrast(120%);
+    box-shadow: 0 0 15px black;
+}
+
+/* BOTON ORIGINAL */
 .btn-volver {
     position: fixed;
     top: 20px;
     left: 20px;
-    background: #78909c;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 6px;
+    background: #1c1c1c;
+    color: #ccc;
+    padding: 10px;
     text-decoration: none;
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    border: 1px solid #333;
 }
 
-.btn-volver:hover {
-    background: #546e7a;
+/* BOTON MIEDO (NUEVO) */
+.btn-miedo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #000;
+    color: #ff1e1e;
+    padding: 12px 14px;
+    border: 1px solid #ff1e1e;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 15px #ff0000;
+    animation: latido 1.2s infinite;
+    z-index: 9999;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); box-shadow: 0 0 10px #ff0000; }
+    50% { transform: scale(1.08); box-shadow: 0 0 25px #ff0000; }
+    100% { transform: scale(1); box-shadow: 0 0 10px #ff0000; }
+}
+
+/* BOTON CRUZ FLOTANTE */
+.btn-cruz {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: #111;
+    border: 2px solid #ff1e1e;
+    color: #ff1e1e;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 0 20px red;
+    z-index: 9999;
+}
+
+/* SECCION CIRUGIA */
+.cirugia-box {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+/* EFECTO TEXTO APARICION */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 </style>
+</head>
+
+<body>
+
+<a href="index.html" class="btn-volver">⬅ Volver</a>
+<a href="index.html" class="btn-miedo">☠ REGRESAR</a>
+<a href="RayosX.html" class="btn-cruz">✚</a>
+
+<div class="container">
+
+<h1>HISTORIA CLÍNICA COMPLETA</h1>
+
+<div class="section">
+<h2>Identificación del paciente</h2>
+<p>
+Nombre: <span class="oculto">Orlando Pérez Rocha</span><br>
+Edad: <span class="oculto">38 años</span><br>
+Procedencia: <span class="oculto">Bogotá D.C</span><br>
+</p>
+</div>
+
+<div class="section">
+<h2>Motivo de consulta</h2>
+<p>
+Paciente refiere haber sido víctima de un intento de hurto, durante el cual es agredido con arma cortopunzante y posteriormente sufre caída con trauma directo sobre el tobillo derecho.
+</p>
+</div>
+
+<div class="section">
+<h2>Enfermedad actual</h2>
+<p>
+Paciente masculino que ingresa al servicio de urgencias con cuadro clínico de aproximadamente una hora de evolución. Refiere múltiples heridas por arma blanca localizadas en región lumbar y extremidad superior izquierda. Posterior al evento presenta dolor intenso en tobillo, acompañado de edema progresivo, deformidad visible y limitación completa para la marcha.
+</p>
+</div>
+
+<div class="section">
+<h2>Examen físico</h2>
+<p>
+Paciente consciente, orientado en las tres esferas, con signos vitales dentro de parámetros aceptables aunque con taquicardia secundaria al dolor. Se evidencian múltiples heridas suturables en región lumbar y antebrazo izquierdo.
+
+A nivel de tobillo se observa deformidad evidente, edema importante, dolor a la palpación y limitación funcional severa.
+</p>
+</div>
+
+<div class="section">
+<h2>Diagnóstico</h2>
+<p>
+Se establece diagnóstico de luxofractura de tobillo con compromiso de peroné distal, compatible con fractura tipo Weber B, asociada a luxación tibioastragalina.
+</p>
+</div>
+
+<div class="section">
+<h2>Estudios de imagen</h2>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121221.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121238.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/ffe8aabfe232604f5267d62aed10449456f4b70b/IMG_20260418_121354.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/0d7d72955c981067575fb33abc0aee75d5115105/IMG_20260418_121734.jpg">
+</div>
+
+</div>
+
+<!-- 🔴 NUEVA SECCION CIRUGIA -->
+<div class="section cirugia-box">
+<h2>Resultados post quirúrgicos del tobillo</h2>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120221.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120313.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/66d835458443fde4e77f7616c9f3429202717b4d/IMG_20260418_120241.jpg">
+</div>
+
+<div class="img-box">
+<img src="https://raw.githubusercontent.com/Orlyk2/FractureDistalTP/c1c0802263c7dfc56792026d1eee5e0278a8a3b5/IMG_20260418_120848.jpg">
+</div>
+
+</div>
+
+<div class="section">
+<h2>Manejo y tratamiento</h2>
+<p>
+Se realiza manejo inicial con analgesia intravenosa, hidratación y profilaxis antitetánica. Se procede a la sutura de heridas y posterior valoración por el servicio de ortopedia, donde se realiza reducción cerrada de la luxofractura e inmovilización mediante férula.
+
+Se indica manejo quirúrgico definitivo, anticoagulación profiláctica y control del dolor.
+</p>
+</div>
+
+<div class="section">
+<h2>Evolución</h2>
+<p>
+Paciente presenta evolución estable, con persistencia de dolor moderado y limitación funcional. No se evidencian signos de compromiso neurovascular. Se mantiene en seguimiento para resolución quirúrgica.
+</p>
+</div>
+
+<div class="section">
+<h2>Conclusión</h2>
+<p>
+El caso representa una lesión compleja secundaria a evento violento, que requiere manejo interdisciplinario oportuno para evitar secuelas funcionales permanentes. La intervención temprana y el seguimiento adecuado son determinantes en el pronóstico del paciente.
+</p>
+</div>
+
+</div>
+
+<script>
+window.addEventListener("load", () => {
+    document.querySelectorAll('.section').forEach((el, i) => {
+        setTimeout(() => {
+            el.classList.add('visible');
+        }, i * 400);
+    });
+});
+</script>
+
+</body>
+</html>

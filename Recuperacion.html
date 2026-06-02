@@ -1,1 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Recuperación Funcional</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(
+180deg,
+#f5f9fc,
+#e3eef7,
+#d9e8f4
+);
+color:#263238;
+line-height:1.8;
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+
+background:
+linear-gradient(
+rgba(255,255,255,0.75),
+rgba(255,255,255,0.85)
+),
+url("https://images.unsplash.com/photo-1576091160550-2173dba999ef");
+background-size:cover;
+background-position:center;
+}
+
+header h1{
+font-size:clamp(40px,6vw,80px);
+color:#1565c0;
+margin-bottom:20px;
+}
+
+header p{
+max-width:800px;
+font-size:20px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:50px 25px;
+}
+
+.card{
+background:white;
+padding:35px;
+margin-bottom:35px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+h2{
+color:#1565c0;
+margin-bottom:20px;
+border-left:5px solid #42a5f5;
+padding-left:15px;
+}
+
+.progreso{
+height:30px;
+background:#d7e5f1;
+border-radius:30px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.barra{
+height:100%;
+width:85%;
+background:
+linear-gradient(
+90deg,
+#4caf50,
+#81c784
+);
+animation:cargar 3s ease;
+}
+
+@keyframes cargar{
+from{width:0;}
+to{width:85%;}
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.item{
+background:#f7fbff;
+padding:20px;
+border-left:4px solid #42a5f5;
+}
+
+.video{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:15px;
+margin-top:25px;
+}
+
+.video iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+.frase{
+font-size:24px;
+text-align:center;
+font-style:italic;
+color:#1565c0;
+padding:40px;
+}
+
+footer{
+padding:50px;
+text-align:center;
+color:#607d8b;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+background:#1565c0;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+.btn:hover{
+background:#0d47a1;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>Recuperación Funcional</h1>
+
+<p>
+
+La recuperación después de una luxofractura de tobillo no depende
+únicamente de la cirugía.
+
+La consolidación ósea, la rehabilitación física, la recuperación
+muscular y la readaptación funcional forman parte de un proceso
+progresivo que permite recuperar movilidad, estabilidad y calidad de vida.
+
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Estado actual del proceso de recuperación</h2>
+
+<p>
+
+Tras la estabilización quirúrgica mediante material de osteosíntesis,
+la evolución clínica ha mostrado progresión favorable.
+
+La consolidación ósea ocurre de manera gradual mediante la formación
+de nuevo tejido óseo alrededor del foco de fractura.
+
+La reducción del edema, el control del dolor y la recuperación
+progresiva del rango de movimiento constituyen indicadores
+importantes de evolución positiva.
+
+</p>
+
+<div class="progreso">
+<div class="barra"></div>
+</div>
+
+<p style="margin-top:15px;">
+Recuperación funcional en progreso mediante seguimiento médico
+y fisioterapia.
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Fases de recuperación después de una ORIF de tobillo</h2>
+
+<div class="timeline">
+
+<div class="item">
+<b>Fase 1: Protección y cicatrización (0–6 semanas)</b><br>
+Control del dolor, disminución del edema, cicatrización de tejidos
+blandos y protección de la fijación quirúrgica.
+</div>
+
+<div class="item">
+<b>Fase 2: Movilidad y fortalecimiento (6–12 semanas)</b><br>
+Inicio progresivo de carga, recuperación del rango articular,
+ejercicios de movilidad y fortalecimiento muscular.
+</div>
+
+<div class="item">
+<b>Fase 3: Reentrenamiento funcional (3–6 meses)</b><br>
+Trabajo de equilibrio, marcha, coordinación y retorno progresivo
+a las actividades cotidianas.
+</div>
+
+<div class="item">
+<b>Fase 4: Adaptación avanzada</b><br>
+Recuperación de resistencia física, confianza funcional
+y optimización biomecánica de la marcha.
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Importancia de la fisioterapia</h2>
+
+<p>
+
+La fisioterapia tiene como objetivo restaurar la movilidad del tobillo,
+mejorar la fuerza muscular, recuperar la estabilidad articular
+y disminuir las compensaciones generadas durante el periodo
+de inmovilización.
+
+Los programas modernos incluyen:
+
+</p>
+
+<ul>
+
+<li>Movilidad articular progresiva</li>
+<li>Fortalecimiento muscular</li>
+<li>Reeducación de la marcha</li>
+<li>Entrenamiento propioceptivo</li>
+<li>Control del equilibrio</li>
+<li>Readaptación funcional</li>
+
+</ul>
+
+</div>
+
+<div class="card">
+
+<h2>Recuperación después de una fractura de tobillo</h2>
+
+<p>
+
+Muchas personas que han requerido placas y tornillos por fracturas
+complejas logran recuperar una marcha funcional mediante programas
+estructurados de rehabilitación.
+
+La velocidad de recuperación depende de factores como la gravedad
+de la lesión, la consolidación ósea, la adherencia a las terapias,
+la condición física previa y la evolución postoperatoria.
+
+</p>
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/6Y3N6rjZb6Q"
+title="Recuperación fractura de tobillo"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Objetivos terapéuticos</h2>
+
+<ul>
+
+<li>Recuperar movilidad articular.</li>
+<li>Disminuir rigidez postoperatoria.</li>
+<li>Mejorar fuerza muscular.</li>
+<li>Restablecer patrones normales de marcha.</li>
+<li>Recuperar estabilidad y equilibrio.</li>
+<li>Reducir riesgo de secuelas funcionales.</li>
+<li>Favorecer independencia física.</li>
+
+</ul>
+
+</div>
+
+<div class="frase">
+
+"La recuperación no ocurre de golpe.
+Se construye paso a paso,
+movimiento tras movimiento."
+
+</div>
+
+<div class="card">
+
+<h2>Perspectiva de evolución</h2>
+
+<p>
+
+La literatura médica muestra que los pacientes sometidos
+a reconstrucción quirúrgica de fracturas de tobillo pueden
+presentar mejoría progresiva durante varios meses después
+de la intervención.
+
+La recuperación funcional continúa incluso después de la consolidación
+radiológica, debido a la adaptación muscular, neurológica y biomecánica
+que ocurre durante el proceso de rehabilitación.
+
+Cada etapa superada representa una evidencia objetiva de avance.
+
+</p>
+
+<a href="index.html" class="btn">
+Volver al inicio
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+Seguimiento de evolución clínica y recuperación funcional.
+
+</footer>
+
+</body>
+</html>
